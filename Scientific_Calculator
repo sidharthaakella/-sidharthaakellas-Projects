@@ -1,0 +1,187 @@
+import math
+
+
+def sin(x):
+    return math.sin(x)
+    
+
+def asin(x):
+    return math.asin(x)
+
+def cos(x):
+    return math.cos(x)
+
+def acos(x):
+    return math.acos(x)
+
+def tan(x):
+    return math.tan(x)
+
+def atan(x):
+    return math.atan(x)
+
+
+def factorial(x):#factorial of x
+    return math.factorial(x)
+
+def lcm(x):# least common multiple of x
+    return math.lcm(x)
+
+def abs(x):# absolute value of x
+    return math.abs(x)
+
+def FMA(x,y,z): # fused multiply add of x,y, and z so (x*y) + z
+    return math.fma(x,y,z)
+
+def mod(x,y):# remainder of division between two variables
+    return math.fmod(x,y)
+
+def cbrt(x):# cube root of x
+    return math.cbrt(x)
+
+def exp(x):# e raised to the power of x
+    return math.exp(x)
+
+def exp2(x):# 2 raised to the power f x
+    return math.exp2(x)
+
+def expm1(x): # e raised to the power x, minus 1
+    return math.expm1(x)
+
+def log_base(x, base):# log of x to the given base
+    return math.log(x, base)
+
+def power(x, y):# x raised to the power of y
+    return math.pow(x,y)
+
+def degrees(x):
+    return math.degrees(x)
+def radians(x):
+    return math.radians(x)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+name = input("Hello may I know your name? ")
+print("""
+          1. Sin
+          2. Sin Inverse
+          3. Cos
+          4. Cos Inverse
+          5. tan
+          6. tan Inverse
+          7. Factorial
+          8. LCM(Least Common Multiple)
+          9. Absolute Value
+          10. FMA: Fused Multiply Add( given 3 integers multiply two of them and add it to the next one)
+          11. Modulo: given two intengers find the remainder of the division between these two integers
+          12. Cube Root
+          13. Exponent: e raised to the power of x
+          14. Exponent two to the power of x
+          15. Exponent minus 1: e raised to power of x minus one.
+          16. log with base: log of x given base(you have to give base)
+          17. power: x to raised to the y
+          18. radian: convert degree to radian
+          19. degrees: convert radian to degrees
+          20. Exit()
+ """)
+
+def calculator():
+    Choice = input("Hello " + name + "what can I calculate for you? Choose the number i.e, 1. sin choose 1 and type it in the terminal:) ")
+    if Choice == "20" or Choice == "Exit":
+        exit()
+    if Choice in ["1","2","3","4","5","6","7","8","9","12","13","14","15","18","19",]:
+        x = int(input("Whats the number? "))
+        if Choice == "1":
+            return sin(x)
+        elif Choice == "2":
+            return asin(x)
+        elif Choice == "3":
+            return cos(x)
+        elif Choice == "4":
+            return acos(x)
+        elif Choice == "5":
+            return tan(x)
+        elif Choice == "6":
+            return atan(x)
+        elif Choice == "7":
+            return factorial(x)
+        elif Choice == "8":
+            return lcm(x)
+        elif Choice == "9":
+            return abs(x)
+        elif Choice == "12":
+            return cbrt(x)
+        elif Choice == "13":
+            return exp(x)
+        elif Choice == "14":
+            return exp2(x)
+        elif Choice == "15":
+            return expm1(x)
+        elif Choice == "18":
+            return radians(x)
+        elif Choice == "19":
+            return degrees(x)
+    if Choice in ["11", "16", "17"]:
+        x = int(input("What's number 1(this will be your x value)? "))
+        y = int(input("What's number 2(this will be your y value)? "))
+        print("*Note if you want log upon confirming your choice you will be asked the base")
+        if Choice == "11":
+            return mod(x,y)
+        elif Choice == "16":
+            base = int(input("whats your base? "))
+            return log_base(x, base)
+        elif Choice == "17":
+            return power(x, y)
+    if Choice == "10":
+        x = int(input("What's number 1(this will be your x value)? "))
+        y = int(input("What's number 2(this will be your y value)? "))
+        z = int(input("What's number 3(this will be your z value)? "))
+        return FMA(x,y,z)
+print(calculator())
