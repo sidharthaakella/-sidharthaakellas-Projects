@@ -4,7 +4,14 @@ annual_Interest_Rate = float(input("What is the interest rate per year? "))
 loan_term_year = int(input("What is the loan term in terms of years? "))
 
 if loan_amount < 0:
-            print("The Loan Amount is less than 0, please check your inputs")
+     print("The Loan Amount is less than 0, please check your inputs")
+     exit()
+if annual_Interest_Rate < 0:
+     print("The Interest Rate is less than 0, please check your inputs")
+     exit()
+if loan_term_year < 0:
+     print("The Loan Term is less than 0, please check your inputs")
+     exit()
 
 
 #I need to calculate the monthly interest rate
