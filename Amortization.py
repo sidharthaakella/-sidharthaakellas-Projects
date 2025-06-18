@@ -1,7 +1,10 @@
 #this is the three inputs stored in String variables that the program will recieve
 loan_amount = float(input("What is the loan Amount? "))
 annual_Interest_Rate = float(input("What is the interest rate per year? "))
-loan_term_year = int(input("What is the loan term? "))
+loan_term_year = int(input("What is the loan term in terms of years? "))
+
+if loan_amount < 0:
+            print("The Loan Amount is less than 0, please check your inputs")
 
 
 #I need to calculate the monthly interest rate
@@ -31,9 +34,10 @@ def Amortization(loan_amount, monthly_payment, loan_term_month):
         }
 
         schedule.append(payment_info)
-        print(f"Month: {Month}, Monthly Payment: {monthly_payment:.2f}, Interest Payment: {interest_payment:.2f}, Principal Payment: {principal_payment:.2f}, Updated Balance: {loan_amount:.2f}")
-        if loan_amount < 0:
-            print("The Loan Amount is less than 0, please check your inputs")
+        
+        if loan_amount == 0:
+            print("The Loan Amount has been paid off")
+            break
     return schedule
 
 schedule = Amortization(loan_amount, monthly_payment, loan_term_month)
